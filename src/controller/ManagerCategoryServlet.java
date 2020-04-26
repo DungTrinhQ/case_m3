@@ -16,7 +16,7 @@ import java.util.Date;
 public class ManagerCategoryServlet extends HttpServlet {
 
     CategoryDAO categoryDAO = new CategoryDAO();
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -32,9 +32,9 @@ public class ManagerCategoryServlet extends HttpServlet {
                     url = "/admin/manager_category.jsp";
                     break;
                 case "search":
-                        String keyword = request.getParameter("keyword");
-                        url = "/admin/manager_category.jsp?pages=1&keyword=" + keyword;
-                        break;
+                    String keyword = request.getParameter("keyword");
+                    url = "/admin/manager_category.jsp?pages=1&keyword=" + keyword;
+                    break;
             }
         } catch (Exception e) {
         }
@@ -66,7 +66,7 @@ public class ManagerCategoryServlet extends HttpServlet {
                         break;
                     case "update":
                         categoryDAO.updateCategory(new Category(Long.parseLong(request.getParameter("category_id")),
-                               tenDanhMuc, groupDanhMuc));
+                                tenDanhMuc, groupDanhMuc));
                         url = "/admin/manager_category.jsp";
                         break;
                 }

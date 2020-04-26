@@ -18,14 +18,15 @@ import java.io.IOException;
 public class UsersServlet extends HttpServlet {
 
     UsersDAO usersDAO = new UsersDAO();
-   
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {       
+            throws ServletException, IOException {
         HttpSession session = request.getSession();
         session.invalidate();
         response.sendRedirect("index.jsp");
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -34,9 +35,9 @@ public class UsersServlet extends HttpServlet {
         String url = "";
         Users users = new Users();
         HttpSession session = request.getSession();
-        
-        switch(command){
-            case "insert": 
+
+        switch (command) {
+            case "insert":
                 users.setUserID(new java.util.Date().getTime());
                 users.setUserEmail(request.getParameter("Email"));
                 users.setUserName(request.getParameter("Name"));
@@ -48,10 +49,10 @@ public class UsersServlet extends HttpServlet {
                 break;
             case "login":
                 users = usersDAO.login(request.getParameter("Email"), MD5.encryption(request.getParameter("Password")));
-                if (users != null){
+                if (users != null) {
                     session.setAttribute("user", users);
                     url = "/index.jsp";
-                }else{
+                } else {
                     request.setAttribute("error", "Sai email hoặc mật khẩu!");
                     url = "/login.jsp";
                 }
