@@ -55,7 +55,7 @@
                 <div class="container">
                     <div class="logo-nav">
                         <div class="logo-nav-left">
-                            <h1><a href="index.jsp">Group 4 <span>Shop fashion</span></a></h1>
+                            <h1><a href="index.jsp">CaseStudy <span>Shop linh tinh</span></a></h1>
                         </div>
                         <jsp:include page="menu.jsp"></jsp:include>
                             <div class="logo-nav-right">
