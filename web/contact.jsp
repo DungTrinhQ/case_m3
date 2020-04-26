@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html><head>
-        <title>Shop Thời Trang</title>
+        <title>Shop Linh Tinh</title>
         <link rel="icon" href="${pageContext.request.contextPath}/images/icon.ico" type="image/png" />
         <!--css-->
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">

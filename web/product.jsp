@@ -9,7 +9,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Shop Thời Trang</title>
+        <title> Shop Linh Tinh</title>
         <!--css-->
         <link rel="icon" href="${pageContext.request.contextPath}/images/icon.ico" type="image/png" />
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>

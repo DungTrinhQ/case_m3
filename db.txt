@@ -1,0 +1,49 @@
+creat database shop;
+use shop;
+create table `product` (
+  `product_id` bigint(20) not null,
+  `category_id` bigint(20) default null,
+  `product_name` varchar(255) collate utf8_unicode_ci default null,
+  `product_image` varchar(255) collate utf8_unicode_ci default null,
+  `product_price` bigint(20) default null,
+  `product_quantity` bigint(20) default null,
+  `product_description` longtext collate utf8_unicode_ci,
+  primary key (`product_id`)
+) engine=innodb default charset=utf8 collate=utf8_unicode_ci;
+
+create table `category` (
+  `category_id` bigint(33) not null,
+  `category_name` varchar(255) collate utf8_unicode_ci default null,
+  `category_group` varchar(255) collate utf8_unicode_ci default null,
+  primary key (`category_id`)
+) engine=innodb default charset=utf8 collate=utf8_unicode_ci;
+
+create table `users` (
+  `user_id` bigint(20) not null,
+  `user_email` varchar(255) collate utf8_unicode_ci default null,
+  `user_pass` varchar(255) collate utf8_unicode_ci default null,
+  `user_name` varchar(255) collate utf8_unicode_ci default null,
+  `user_role` bit(1) default null,
+  primary key (`user_id`)
+) engine=myisam default charset=utf8 collate=utf8_unicode_ci;
+
+create table `bill` (
+  `bill_id` bigint(20) not null,
+  `user_id` bigint(20) default null,
+  `total` double default null,
+  `phone` varchar(12) collate utf8_unicode_ci default null,
+  `address` longtext collate utf8_unicode_ci,
+  `date` timestamp null default null on update current_timestamp,
+  `paid` int(11) default null,
+  `status` int(11) default null,
+  primary key (`bill_id`)
+) engine=myisam default charset=utf8 collate=utf8_unicode_ci;
+
+create table `bill_detail` (
+  `bill_detail_id` bigint(20) not null auto_increment,
+  `bill_id` bigint(20) default null,
+  `product_id` bigint(20) default null,
+  `price` double default null,
+  `quantity` int(11) default null,
+  primary key (`bill_detail_id`)
+) engine=myisam auto_increment=9 default charset=utf8 collate=utf8_unicode_ci;
